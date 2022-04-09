@@ -2,11 +2,12 @@ let getBtn = document.querySelector("#btn-get");
 let btnUserName = document.querySelector("#user-name");
 let errorNull = document.querySelector("#error-null");
 let content = document.querySelector("#profile");
-let userID;
+let userID
 btnUserName.addEventListener("change", (e) => {
   userID = e.target.value;
 });
 getBtn.addEventListener("click", () => {
+  content.style.display='flex'
   if (!userID) {
     return (content.innerHTML = `<h1>Please enter user name</h1>`);
   } else {
