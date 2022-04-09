@@ -8,15 +8,17 @@ btnUserName.addEventListener("change", (e) => {
 });
 getBtn.addEventListener("click", () => {
   if (!userID) {
-    return (errorNull.innerHTML = `Please enter user name !`);
+    return (content.innerHTML = `<h1>Please enter user name</h1>`);
   } else {
     fetch("https://api.github.com/users/" + userID)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error(errorNull.innerHTML = `User ID ${Error.value}`);
-    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(
+          (content.innerHTML = `<h1>User ID ${Error.value}</h1>`)
+        );
+      })
       .then(function (response) {
         return (content.innerHTML = `
       <div class="profile__avatar">
