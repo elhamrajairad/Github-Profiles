@@ -1,3 +1,8 @@
+body {
+  background-image: url("../img/3259374_github_media_social_icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .search-box {
   width: 100%;
   margin: 10rem auto;
@@ -19,10 +24,10 @@
   border-radius: var(--border-raduis-sm);
   transition: all 0.3s ease;
 }
-.button:hover{
+.button:hover {
   color: var(--dark-color);
   background-color: var(--light-color);
-  box-shadow: inset 0px 0px 1px  1px var(--primary-color);
+  box-shadow: inset 0px 0px 1px 1px var(--primary-color);
 }
 #profile {
   display: flex;
@@ -33,13 +38,15 @@
   background-color: var(--light-color);
   padding: 1.5rem;
   border-radius: var(--border-raduis-sm);
-  width: 50%;
+  width: 0;
   margin: 0 auto;
   box-shadow: 0 0 1rem 0.1rem #ccc;
-  display: none;
+  visibility: hidden;
+  transition: all 0.5s ease;
 }
 .profile__avatar {
   margin-right: 2.5rem;
+  position: relative;
 }
 .profile__avatar img {
   width: 12rem;
@@ -82,9 +89,19 @@
   font-weight: 800 !important;
   color: var(--gray-color) !important;
 }
-#error-null{
+#error-null {
   font-size: 2.5rem;
   line-height: 5rem;
   font-weight: 800;
   text-align: center;
+}
+#hireable {
+  display: none;
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+}
+.link__git {
+  align-self: flex-end;
+  margin-left: auto;
 }

@@ -2,12 +2,13 @@ let getBtn = document.querySelector("#btn-get");
 let btnUserName = document.querySelector("#user-name");
 let errorNull = document.querySelector("#error-null");
 let content = document.querySelector("#profile");
-let userID
+let userID;
 btnUserName.addEventListener("change", (e) => {
   userID = e.target.value;
 });
 getBtn.addEventListener("click", () => {
-  content.style.display='flex'
+  content.style.visibility = "visible";
+  content.style.width = "50%";
   if (!userID) {
     return (content.innerHTML = `<h1>Please enter user name</h1>`);
   } else {
@@ -24,6 +25,7 @@ getBtn.addEventListener("click", () => {
         return (content.innerHTML = `
       <div class="profile__avatar">
         <img src=${response.avatar_url} alt=${response.name}>
+        <i class="fa-solid fa-circle-check" id='hireable'></i>
       </div>
       <div class="profile__detaile">
         <div class="detaile__names">
@@ -45,6 +47,7 @@ getBtn.addEventListener("click", () => {
           </p>
         </div>
       </div>
+      <a href='${response.html_url}' class='button link__git' target='_blank'>Github Link</a>
     `);
       });
   }
