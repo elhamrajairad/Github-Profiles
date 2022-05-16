@@ -1,33 +1,56 @@
-main{
-  background-image: url("../img/3259374_github_media_social_icon.png");
+#background {
+  background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+#background main{
+  height: 100vh;
+  width: 100vw;
+  background: rgba(3, 3, 3, 0.446);
 }
 .search-box {
   width: 100%;
   margin: 0 auto;
-  padding: 5rem;
+  padding:10rem 4rem;
   text-align: center;
+}
+.search-box h1{
+  background: -webkit-linear-gradient(174deg, #040404 0%, #6a93c1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: #322f2f00;
+  -webkit-box-decoration-break: clone;
+  font-size: 5rem;
+  font-weight: 600;
+margin-bottom: 3rem;
 }
 .search-box input {
   padding: 1rem 1.2rem;
-  border: 1px solid var(--primary-color);
+  border: none;
+  border-bottom: 1px solid #000;
+  background-color: transparent;
+  margin-left: 1rem;
   outline: none;
-  border-radius: var(--border-raduis-sm);
+}
+.search-box input::placeholder{
+  color: var(--dark-color);
+  font-size: 1.5rem;
 }
 .button {
   background-color: var(--primary-color);
-  padding: 1rem 1.2rem;
+  padding: 1rem 2rem;
   border: 0;
   color: var(--light-color);
   outline: none;
-  border-radius: var(--border-raduis-sm);
+  border-radius: var(--border-raduis-xs);
   transition: all 0.3s ease;
 }
 .button:hover {
-  color: var(--dark-color);
-  background-color: var(--light-color);
+  color: var(--light-color);
+  background-color:transparent;
   box-shadow: inset 0px 0px 1px 1px var(--primary-color);
 }
 #profile {
@@ -36,18 +59,20 @@ main{
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  background-color: var(--light-color);
-  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 5rem 4rem;
   border-radius: var(--border-raduis-sm);
   width: 0;
-  margin:auto;
-  box-shadow: 0 0 1rem 0.1rem #ccc;
+  margin: auto;
+  box-shadow: 0 0 1rem 0.1rem rgb(91, 91, 91);
   visibility: hidden;
   transition: all 0.5s ease;
 }
 .profile__avatar {
   margin-right: 2.5rem;
   position: relative;
+  align-items: center;
+  gap: 2rem;
 }
 .profile__avatar img {
   width: 12rem;
@@ -62,12 +87,13 @@ main{
 .profile__detaile h1 {
   font-size: 2.5rem;
   line-height: 5rem;
-  font-weight: 800;
+  font-weight: 500;
+  color: var(--light-color);
 }
 .profile__detaile p {
   font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--gray-color);
+  font-weight: 400;
+  color: var(--light-color);
 }
 .detaile__user {
   display: flex;
@@ -81,14 +107,15 @@ main{
   font-size: 1.3rem;
 }
 .detaile__user p {
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+  
 }
 .following__count,
 .followers__count,
 .repo__count {
-  font-size: 1.5rem !important;
-  font-weight: 800 !important;
-  color: var(--gray-color) !important;
+  font-size: 1.3rem !important;
+  font-weight: 500 !important;
+  color: var(--light-gray-color) !important;
 }
 #error-null {
   font-size: 2.5rem;
@@ -97,12 +124,12 @@ main{
   text-align: center;
 }
 #hireable {
-  display: none;
+  display: block;
   position: absolute;
-  bottom: 2rem;
-  right: 0;
+  bottom: 1rem;
+  right: 0.5rem;
+  font-size: 2rem;
 }
 .link__git {
-  align-self: flex-end;
   margin-left: auto;
 }

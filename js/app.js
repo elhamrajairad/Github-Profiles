@@ -23,14 +23,19 @@ getBtn.addEventListener("click", () => {
       })
       .then(function (response) {
         return (content.innerHTML = `
-      <div class="profile__avatar">
+      <div class="profile__avatar flex flex-column">
         <img src=${response.avatar_url} alt=${response.name}>
-        <i class="fa-solid fa-circle-check" id='hireable'></i>
+        ${
+          response.hireable
+            ? `<i class="fa-solid fa-circle-check" id='hireable'></i>`
+            : ""
+        }
+        <span class="repo__count">${response.location}</span>
       </div>
       <div class="profile__detaile">
         <div class="detaile__names">
           <h1 class="profile__name">${response.name}</h1>
-          <p class="profile__id">ID: ${response.id}</p>
+          <p class="profile__id">${response.bio}</p>
         </div>
         <div class="detaile__user">
           <p class="user__repo">
@@ -47,7 +52,9 @@ getBtn.addEventListener("click", () => {
           </p>
         </div>
       </div>
-      <a href='${response.html_url}' class='button link__git' target='_blank'>Github Link</a>
+      <a href='${
+        response.html_url
+      }' class='button link__git' target='_blank'>Github Link</a>
     `);
       });
   }

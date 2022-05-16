@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
-  --primary-color: #0173fe;
+  --primary-color: #000;
   --light-color: #fffafa;
 
   /* Texts */
@@ -43,18 +42,13 @@
 
 html {
   font-size: 62.5%;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
   font-size: 1.5rem;
   height: 100vh;
-  background: linear-gradient(
-    275deg,
-    rgba(1, 115, 254, 1) 0%,
-    rgb(255, 255, 255) 63% 
-  );
 }
 
 button,
@@ -78,7 +72,7 @@ a {
 
 .container {
   width: 100%;
-  margin: 10rem auto;
+  margin: 0 auto;
   padding: 0 1rem;
 }
 
@@ -93,7 +87,9 @@ a {
 .flex-column {
   flex-direction: column;
 }
-
+.flex-row{
+  flex-direction: row;
+}
 .justify-content-center {
   justify-content: center;
 }
