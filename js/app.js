@@ -2,15 +2,15 @@ let getBtn = document.querySelector("#btn-get");
 let btnUserName = document.querySelector("#user-name");
 let errorNull = document.querySelector("#error-null");
 let content = document.querySelector("#profile");
-let userID;
+let userID
 btnUserName.addEventListener("change", (e) => {
   userID = e.target.value;
 });
 getBtn.addEventListener("click", () => {
   content.style.visibility = "visible";
-  content.style.width = "50%";
+  content.style.width = "55%";
   if (!userID) {
-    return (content.innerHTML = `<h1>Please enter user name</h1>`);
+    return (content.innerHTML = `<h1 class='heading'>Please enter user name</h1>`);
   } else {
     fetch("https://api.github.com/users/" + userID)
       .then((response) => {
